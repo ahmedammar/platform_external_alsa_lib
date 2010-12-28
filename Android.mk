@@ -40,7 +40,7 @@ $(copy_to) : $(TARGET_ALSA_CONF_DIR)/% : $(LOCAL_ALSA_CONF_DIR)/% | $(ACP)
 	$(transform-prebuilt-to-target)
 
 ALL_PREBUILT += $(copy_to)
-
+LOCAL_MODULE_TAGS := optional
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libasound
@@ -73,7 +73,7 @@ LOCAL_SRC_FILES := $(filter-out src/shmarea.c, $(LOCAL_SRC_FILES))
 
 LOCAL_SHARED_LIBRARIES := \
     libdl
-
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 endif
